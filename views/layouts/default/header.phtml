@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
+		<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+		<title>Money Tracking</title>
+	</head>
+	<body>
+	<div>
+		<ul>
+		<li><a href="<?php echo APP_URL; ?>">Money Tracking</a></li>
+		<?php if ($_SESSION["type_name"] == "administrador") { ?>
+			<li><a href="<?php echo APP_URL."/users/"; ?>">Usuarios</a></li>
+			<li><a href="<?php echo APP_URL."/types/"; ?>">Tipos de usuarios</a></li>
+		<?php } ?>
+			<li><a href="<?php echo APP_URL."/accounts/"; ?>">Cuentas</a></li>
+			<li><a href="<?php echo APP_URL."/transactions/"; ?>">Transacciones</a></li>
+			<li><a href="<?php echo APP_URL."/categories/"; ?>">Categorias</a></li>
+			<li>Nombre usuario: <strong><?php echo $_SESSION["username"]; ?></strong></li>
+			<li><a href="<?php echo APP_URL."/users/logout"; ?>">Cerrar sesión</a></li>
+		</ul>
+	</div>

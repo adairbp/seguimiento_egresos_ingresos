@@ -1,0 +1,55 @@
+<?php ?>
+<!doctype html>
+<html class="no-js" lang="">
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Monkey Tracking</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+        <link rel="stylesheet" href="<?php echo $_layoutParams['route_css']?>/normalize.min.css">
+        <link rel="stylesheet" href="<?php echo $_layoutParams['route_css']?>/main.css">
+
+        <script src="<?php echo $_layoutParams['route_js']?>/vendor/modernizr-2.8.3.min.js"></script>
+
+        <link href="<?php echo $_layoutParams['route_css']?>/bootstrap.min.css" rel="stylesheet">
+    </head>
+    <style type="text/css">
+        body {
+          padding-top: 70px;
+        }
+    </style>
+    <body>
+        <div class="container">
+        <!--[if lt IE 8]>
+            <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+        <![endif]-->
+    <!-- Fixed navbar -->
+    <nav class="navbar navbar-default navbar-fixed-top">
+      <div class="container">
+        <div class="navbar-header">
+          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+          </button>
+          <a class="navbar-brand" href="<?php echo APP_URL; ?>">Money Tracking</a>
+        </div>
+        <div id="navbar" class="navbar-collapse collapse">
+          <ul class="nav navbar-nav">
+               <?php if ($_SESSION["type_name"] == "administrador") { ?>
+                    <li><a href="<?php echo APP_URL."/users/"; ?>">Usuarios</a></li>
+                    <li><a href="<?php echo APP_URL."/types/"; ?>">Tipos de usuarios</a></li>
+                <?php } ?>
+                    <li><a href="<?php echo APP_URL."/accounts/"; ?>">Cuentas</a></li>
+                    <li><a href="<?php echo APP_URL."/transactions/"; ?>">Transacciones</a></li>
+                    <li><a href="<?php echo APP_URL."/categories/"; ?>">Categorias</a></li>
+                    <li><a href="">Nombre usuario: <strong><?php echo $_SESSION["username"]; ?></strong></a></li>
+                    <li><a href="<?php echo APP_URL."/users/logout"; ?>">Cerrar sesión</a></li>
+          </ul>
+        </div><!--/.nav-collapse -->
+      </div>
+    </nav>
